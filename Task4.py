@@ -49,6 +49,7 @@ print('Smallest value:',min(numbers))
 print('Total:',sum(numbers))
 '''
 #Even and Odd Number Separator
+'''
 numbers = [10,15,20,25,30,35]
 even = []
 odd = []
@@ -65,10 +66,10 @@ backup = numbers.copy()
 numbers.clear()
 print("Original list after clear():", numbers)
 print("Backup list:", backup)
-
+'''
 
 #Unique Name Manager
-
+'''
 names = ["Asha", "Rahul", "Asha", "John", "Rahul"]
 unique_names = set(names)
 unique_names.add("Meera")
@@ -80,29 +81,46 @@ print("Unique student names:")
 
 for name in unique_names:
     print(name)
-
+'''
 
 #Course student Comparision
 
-python_students = {"Asha", "Rahul", "John", "Meera"}
-da_students = {"Rahul", "Meera", "Arun"}
-
-print("Union:", python_students.union(da_students))
-print("Intersection:", python_students.intersection(da_students))
-print("Only Python:", python_students.difference(da_students))
-print("Only one course:", python_students.symmetric_difference(da_students))
-
-print("DA subset of Python:", da_students.issubset(python_students))
-print("Python superset of DA:", python_students.issuperset(da_students))
-print("Both are disjoint:", python_students.isdisjoint(da_students))
-
-print("Union students:")
-for i in python_students.union(da_students):
+apython_students={'Asha','Rahul','John','Meera'}
+da_students={'Rahul','Meera','Arun'}
+a=python_students.union(da_students)
+b=python_students.intersection(da_students)
+c=python_students.difference(da_students)
+d=python_students.symmetric_difference(da_students)
+print('All Students:')
+for i in a:
     print(i)
+print('Students have both courses:')
+for j in b:
+    print(j)
+print('Only Python:') 
+for k in c:
+    print(k)
+print('Only one course:')
+for m in d:
+    print(m)
+    
+print("\nDA is subset of Python:", da_students.issubset(python_students))
+if da_students.issubset(python_students):
+    print("All DA students are also Python students")
+else:
+    print("All DA students are not Python students")
 
-print("Common students:")
-for i in python_students.intersection(da_students):
-    print(i)
+print("Python is superset of DA:", python_students.issuperset(da_students))
+if python_students.issuperset(da_students):
+    print("Python contains all DA students")
+else:
+    print("Python does not contain all DA students")
+
+print("Both sets are disjoint:", python_students.isdisjoint(da_students))
+if python_students.isdisjoint(da_students):
+    print("There are no common students")
+else:
+    print("There are common students in both courses")
 
     
 
